@@ -1,6 +1,9 @@
 # Signature Detection and Verification
 
 Applied classical computer vision techniques for signature verification, including feature extraction and image matching methods such as HOG, skeleton-based descriptors, Chamfer similarity, aligned overlap comparison, and SIFT/ORB with RANSAC for keypoint matching.
+<p align="center">
+  <img src="Thumb.png" alt="Project Thumbnail" width="700">
+</p>
 
 ## Features
 
