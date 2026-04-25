@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signature Pipeline Demo</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="page-shell">
+        <header class="hero">
+            <p class="eyebrow">Computer Vision Pipeline</p>
+            <h1>Signature Detection And Verification</h1>
+            <p class="hero-copy">
+                Choose a mode to detect a signature region inside a document or compare two
+                signatures through preprocessing, normalization, feature extraction, and verification.
+            </p>
+            <div class="mode-switch">
+                <button class="mode-button active" data-mode="detection">Detection</button>
+                <button class="mode-button" data-mode="verification">Verification</button>
+            </div>
+        </header>
+
+        <main class="workspace">
+            <section class="panel mode-panel active" id="detection-panel">
+                <div class="panel-heading">
+                    <h2>Signature Detection</h2>
+                    <p>Upload a document or image to find and crop the signature region.</p>
+                </div>
+
+                <form id="detection-form" class="tool-form">
+                    <label class="upload-card" for="document-input">
+                        <span class="upload-title">Document Image</span>
+                        <span class="upload-copy">PNG, JPG, JPEG, BMP, TIFF, WEBP</span>
+                        <input id="document-input" name="document" type="file" accept="image/*" required>
+                    </label>
+
+                    <div class="preview-box">
+                        <img id="document-preview" alt="Document preview">
+                        <p id="document-preview-empty">No document image selected yet.</p>
+                    </div>
+
+                    <button class="primary-button" type="submit">Run Detection</button>
+                </form>
+
+                <div id="detection-status" class="status-text"></div>
+                <div id="detection-result"></div>
+            </section>
+
+            <section class="panel mode-panel" id="verification-panel">
+                <div class="panel-heading">
+                    <h2>Signature Verification</h2>
+                    <p>Upload two signature images to determine whether they are genuine or forged.</p>
+                </div>
+
+                <form id="verification-form" class="tool-form">
+                    <div class="dual-upload">
+                        <label class="upload-card" for="signature-a-input">
+                            <span class="upload-title">Signature A</span>
+                            <span class="upload-copy">Reference signature</span>
+                            <input id="signature-a-input" name="signature_a" type="file" accept="image/*" required>
+                        </label>
+
+                        <label class="upload-card" for="signature-b-input">
+                            <span class="upload-title">Signature B</span>
+                            <span class="upload-copy">Signature to compare</span>
+                            <input id="signature-b-input" name="signature_b" type="file" accept="image/*" required>
+                        </label>
+                    </div>
+
+                    <div class="dual-preview">
+                        <div class="preview-box">
+                            <img id="signature-a-preview" alt="Signature A preview">
+                            <p id="signature-a-empty">No Signature A selected yet.</p>
+                        </div>
+                        <div class="preview-box">
+                            <img id="signature-b-preview" alt="Signature B preview">
+                            <p id="signature-b-empty">No Signature B selected yet.</p>
+                        </div>
+                    </div>
+
+                    <label class="threshold-field">
+                        <span>Threshold (optional)</span>
+                        <input id="threshold-input" name="threshold" type="number" min="0" max="1" step="0.01" placeholder="0.70">
+                    </label>
+
+                    <button class="primary-button" type="submit">Run Verification</button>
+                </form>
+
+                <div id="verification-status" class="status-text"></div>
+                <div id="verification-result"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="/app.js"></script>
+</body>
+</html>
