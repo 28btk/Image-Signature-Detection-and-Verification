@@ -1,6 +1,6 @@
 # Signature Detection and Verification
 
-Final project for the Introduction to Computer Vision course.
+Applied classical computer vision techniques for signature verification, including feature extraction and image matching methods such as HOG, skeleton-based descriptors, Chamfer similarity, aligned overlap comparison, and SIFT/ORB with RANSAC for keypoint matching.
 
 ## Features
 
