@@ -6,7 +6,6 @@ Final project for the Introduction to Computer Vision course.
 
 - Signature Detection: detect, draw a bounding box, and crop the signature region from a document image.
 - Signature Verification: compare two signature images and classify them as `genuine` or `forged`.
-- Requirement 4 improvement: improve verification accuracy with computer vision features, including HOG, skeleton descriptors, Chamfer similarity, aligned overlap, and SIFT/ORB-RANSAC.
 
 ## Environment Requirements
 
@@ -24,13 +23,6 @@ conda activate signature-pipeline
 pip install -r requirements.txt
 python run.py
 ```
-
-After the server starts, open:
-
-```text
-http://127.0.0.1:5000
-```
-
 ## Run With Standard Python
 
 On Windows:
@@ -49,12 +41,6 @@ python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 python run.py
-```
-
-After the server starts, open:
-
-```text
-http://127.0.0.1:5000
 ```
 
 ## How To Use The Application
@@ -88,13 +74,6 @@ python tools/evaluate_pairs.py --pairs pairs.csv --image-root path/to/dataset --
 
 The output JSON contains accuracy, precision, recall, and F1-score for both the baseline model and the improved model.
 
-## IEEE-Style Report
-
-The English LaTeX report is available at:
-
-```text
-docs/21127633_ieee_report.tex
-```
 
 The internal benchmark output used in the report is available at:
 
